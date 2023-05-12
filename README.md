@@ -4,7 +4,7 @@
 ## To-dos
 - [x] 1. Project Setup
 - [x] 2. Create a player
-- [ ] 3. Move the player
+- [x] 3. Move the player
 - [ ] 4. Create projectiles
 - [ ] 5. Create an invader
 - [ ] 6. Create and move grids of invaders
