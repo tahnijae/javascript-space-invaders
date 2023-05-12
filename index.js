@@ -1,2 +1,5 @@
 const canvas = document.querySelector('canvas')
-console.log(canvas)
+const canvasContext = canvas.getContext('2d')
+
+canvas.width = innerWidth  // can also do window.innerWidth
+canvas.height = innerHeight
