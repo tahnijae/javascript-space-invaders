@@ -3,7 +3,7 @@
 
 ## To-dos
 - [x] 1. Project Setup
-- [ ] 2. Create a player
+- [x] 2. Create a player
 - [ ] 3. Move the player
 - [ ] 4. Create projectiles
 - [ ] 5. Create an invader

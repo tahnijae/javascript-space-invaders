@@ -1,17 +1,13 @@
 //SETUP
 const canvas = document.querySelector('canvas')
 const canvasContext = canvas.getContext('2d')
+const spaceshipScale = 0.15
 
 canvas.width = innerWidth  // can also do window.innerWidth
 canvas.height = innerHeight
 
 class Player {
     constructor() { //Initialize player size, location, velocity
-        this.position = {
-            x: 200,
-            y: 200
-        }
-
         this.velocity = {
             x: 0,
             y: 0
@@ -19,17 +15,26 @@ class Player {
 
         const image = new Image()
         image.src = "./assets/img/spaceship.png"
+        image.onload = () => {
+            this.image = image
+            this.width = image.width * spaceshipScale
+            this.height = image.height * spaceshipScale
+            this.position = {
+                x: canvas.width / 2 - this.width / 2,
+                y: canvas.height - this.height - 20
+            }
+        }
 
-        this.image = image
-        this.width = 100
-        this.height = 100
+
     }
 
     draw() {
         // canvasContext.fillStyle = 'blue'
         // canvasContext.fillRect(this.position.x, this.position.y, this.width, this.height)
 
-        canvasContext.drawImage(this.image, this.position.x, this.position.y)
+        if(this.image){
+            canvasContext.drawImage(this.image, this.position.x, this.position.y, this.width, this.height)
+        }
     }
 
 }
@@ -40,9 +45,9 @@ animate()
 
 //Currenty we are only calling the spaceship image once and the screen is loaded in before the image is finished loading so we cannot see it.
 // Because we want to get the spaceship to move and continue to update it's position, it's going to call itself
-function animate (){
+function animate() {
     requestAnimationFrame(animate)
     canvasContext.fillStyle = 'black'
-    canvasContext.fillRect(0,0, canvas.width, canvas.height)
+    canvasContext.fillRect(0, 0, canvas.width, canvas.height)
     player.draw()
 }
