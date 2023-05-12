@@ -3,8 +3,13 @@
 
 ## To-dos
 - [x] 1. Project Setup
+<<<<<<< HEAD
 - [x] 2. Create a player
 - [x] 3. Move the player
+=======
+- [ ] 2. Create a player
+- [ ] 3. Move the player
+>>>>>>> parent of 85f699e (finished creating the player)
 - [ ] 4. Create projectiles
 - [ ] 5. Create an invader
 - [ ] 6. Create and move grids of invaders
